@@ -12,9 +12,9 @@
 
 评测系统参数
 
-OS:Ubuntu 14.04 
-GCC:GNU C 4.8.2 
-G++:GNU C++ 4.8.2 
-Java:OpenJDK 1.7.0_51 
-C#:Mono 3.2.8 
-Python2:Python 2.7.6 
+OS:Ubuntu 14.04  
+GCC:GNU C 4.8.2  
+G++:GNU C++ 4.8.2   
+Java:OpenJDK 1.7.0_51  
+C#:Mono 3.2.8  
+Python2:Python 2.7.6   
