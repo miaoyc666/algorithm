@@ -24,24 +24,10 @@ hihocoder题目描述
 7
 """
 
-"""
-hihocoder题解
-while True:
-    try:
-        (x, y) = (int(x) for x in raw_input().split())
-        print x + y
-    except EOFError:
-        break
-"""
-
-
-def a_b(num_lst):
-    try:
-        return [nums[0] + nums[1] for nums in num_lst]
-    except Exception as e:
-        print e
-
-
 if __name__ == "__main__":
-    input_v = [[1, 2], [3, 4]]
-    print '\n'.join([str(x) for x in a_b(input_v)])
+    while True:
+        try:
+            (x, y) = (int(x) for x in raw_input().split())
+            print x + y
+        except EOFError:
+            break
