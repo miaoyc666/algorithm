@@ -1,4 +1,4 @@
-#!/usr/bin/ython
+#!/usr/bin/env python
 # encoding:utf-8
 
 from collections import defaultdict
@@ -69,18 +69,29 @@ bbabbaab
 """
 
 
-class TrieNode:
+class TrieNode(object):
+    """
+    前缀树节点
+    """
     def __init__(self):
         self.nodes = defaultdict(TrieNode)
         self.count = 1
 
 
-class Trie:
+class Trie(object):
+    """
+    前缀树
+    """
 
     def __init__(self):
         self.root = TrieNode()
 
     def add(self, word):
+        """
+        新增节点
+        :param word:
+        :return:
+        """
         cur = self.root
         for char in word:
             if char in cur.nodes:
@@ -88,6 +99,11 @@ class Trie:
             cur = cur.nodes[char]
 
     def find(self, prefix):
+        """
+        查找节点
+        :param prefix:
+        :return:
+        """
         cur = self.root
         for char in prefix:
             if char not in cur.nodes:
@@ -97,14 +113,14 @@ class Trie:
 
 
 if __name__ == "__main__":
-    trie = Trie()
+    trie_tree = Trie()
     while True:
         try:
             n = int(raw_input())
             for i in xrange(n):
-                trie.add(raw_input())
+                trie_tree.add(raw_input())
             n = int(raw_input())
             for i in xrange(n):
-                print trie.find(raw_input())
+                print trie_tree.find(raw_input())
         except EOFError:
             break
