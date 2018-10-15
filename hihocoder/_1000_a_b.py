@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-
 """
 hihocoder题目描述
 时间限制:1000ms
@@ -25,10 +24,19 @@ hihocoder题目描述
 7
 """
 
-if __name__ == "__main__":
+
+def main():
+    """
+    main
+    :return:
+    """
     while True:
         try:
-            (x, y) = (int(x) for x in raw_input().split())
-            print x + y
+            (a, b) = (int(x) for x in raw_input().split())
+            print a + b
         except EOFError:
             break
+
+
+if __name__ == "__main__":
+    main()

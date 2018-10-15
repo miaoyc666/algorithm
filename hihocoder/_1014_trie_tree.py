@@ -1,8 +1,6 @@
 #!/usr/bin/env python
 # encoding:utf-8
 
-from collections import defaultdict
-
 """
 hihocoder题目描述
 #1014 : Trie树
@@ -68,6 +66,8 @@ bbabbaab
 0
 """
 
+from collections import defaultdict
+
 
 class TrieNode(object):
     """
@@ -112,15 +112,23 @@ class Trie(object):
         return cur.count
 
 
-if __name__ == "__main__":
+def main():
+    """
+    main
+    :return:
+    """
     trie_tree = Trie()
     while True:
         try:
-            n = int(raw_input())
-            for i in xrange(n):
+            word_count = int(raw_input())
+            for i in xrange(word_count):
                 trie_tree.add(raw_input())
-            n = int(raw_input())
-            for i in xrange(n):
+            word_count = int(raw_input())
+            for i in xrange(word_count):
                 print trie_tree.find(raw_input())
         except EOFError:
             break
+
+
+if __name__ == "__main__":
+    main()
