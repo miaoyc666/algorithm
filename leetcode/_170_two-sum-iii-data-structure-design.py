@@ -31,8 +31,8 @@ class TwoSum(object):
         :type value: int
         :rtype: bool
         """
-        numnbers = self.data.keys()
-        for i in numnbers:
+        numbers = self.data.keys()
+        for i in numbers:
             if value == i * 2 and self.data[i] >= 2:
                 return True
             if value - i in self.data:
