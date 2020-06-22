@@ -8,6 +8,8 @@ Create date  : 2020/6/21
 Description  : 
 """
 
+import collections
+
 
 class TwoSum(object):
 
