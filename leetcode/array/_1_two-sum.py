@@ -3,7 +3,7 @@
 
 """
 File name    : _1_two-sum.py
-Author       : miaoyc1989@hotmail.com
+Author       : miaoyc
 Create date  : 2020/6/18
 Description  :
 """

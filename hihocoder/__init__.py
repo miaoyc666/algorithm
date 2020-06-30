@@ -3,7 +3,7 @@
 
 """
 File name    : __init__.py
-Author       : miaoyc1989@hotmail.com
+Author       : miaoyc
 Create date  : 2018/9/17
 Description  :
 """
