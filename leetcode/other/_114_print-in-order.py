@@ -5,7 +5,7 @@
 File name    : _114_print-in-order.py
 Author       : miaoyc
 Create date  : 2020/6/22
-Description  : 
+Description  : 信号量
 """
 
 from threading import Lock

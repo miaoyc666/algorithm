@@ -5,7 +5,7 @@
 File name    : _1480_running-sum-of-1d-array.py
 Author       : miaoyc
 Create date  : 2020/6/30
-Description  : 
+Description  : 直接遍历即可
 """
 
 
