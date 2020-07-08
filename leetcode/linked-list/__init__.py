@@ -5,5 +5,5 @@
 File name    : __init__.py
 Author       : miaoyc
 Create date  : 2020/6/30
-Description  : 
+Description  : linked-list algorithm
 """
