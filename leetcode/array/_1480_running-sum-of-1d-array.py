@@ -8,6 +8,8 @@ Create date  : 2020/6/30
 Description  : 直接遍历即可
 """
 
+"""
+"""
 
 class Solution(object):
     def runningSum(self, nums):
