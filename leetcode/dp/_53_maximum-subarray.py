@@ -5,7 +5,7 @@
 File name    : _53_maximum-subarray.py
 Author       : miaoyc
 Create date  : 2020/7/10 5:39 下午
-Description  : 最大子序和
+Description  : 最大子序和, 动态规划入门题
 """
 
 """
@@ -43,3 +43,6 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
+        for i in range(1, len(nums)):
+            nums[i]= nums[i] + max(nums[i-1], 0)
+        return max(nums)
