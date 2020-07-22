@@ -44,5 +44,5 @@ class Solution(object):
         :rtype: int
         """
         for i in range(1, len(nums)):
-            nums[i]= nums[i] + max(nums[i-1], 0)
+            nums[i] = nums[i] + max(nums[i-1], 0)
         return max(nums)
