@@ -4,6 +4,6 @@
 """
 File name    : __init__.py
 Author       : miaoyc
-Create date  : 2020/7/10 5:38 下午
-Description  : 动态规划
+Create date  : 2020/6/30
+Description  : 贪心
 """
