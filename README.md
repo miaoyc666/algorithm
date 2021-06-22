@@ -7,7 +7,7 @@ hihocoder：4
 【说明】  
 leetcode版本代码均为网站提交通过版本代码，但不表示可以直接在py文件内运行。  
 
-【算法目录结构】
+【算法目录结构】  
 .
 ├── README.md  
 ├── hihocoder  
