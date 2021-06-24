@@ -30,10 +30,6 @@ Description  : 最大子序和, 动态规划入门题
 
 对于刚接触动态规划的, 我感觉熟悉第三种遍历方式是需要抓住的核心
 
-作者：lao-hu-8
-链接：https://leetcode-cn.com/problems/maximum-subarray/solution/xiang-xi-jie-du-dong-tai-gui-hua-de-shi-xian-yi-li/
-来源：力扣（LeetCode）
-著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
 """
 
 
