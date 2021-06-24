@@ -41,8 +41,28 @@ Description  : 平衡二叉树
 
 
 class Solution(object):
+
+    def height(self, root):
+        # check root null
+        if not root:
+            return 0
+
+        # check left
+        left = self.height(root.left)
+        if left == -1:
+            return -1
+
+        # check right
+        right = self.height(root.right)
+        if right == -1:
+            return -1
+
+        # diff
+        return max(left, right) + 1 if abs(left - right) < 2 else -1
+
     def isBalanced(self, root):
         """
         :type root: TreeNode
         :rtype: bool
         """
+        return self.height(root) != -1
