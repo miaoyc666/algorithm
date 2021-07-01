@@ -1,7 +1,7 @@
 # 刷题记录
 
 【当前进度】  
-leetcode：26/2131  
+leetcode：28/2131  
 hihocoder：4  
   
 【说明】  
