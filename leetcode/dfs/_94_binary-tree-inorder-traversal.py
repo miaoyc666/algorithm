@@ -65,12 +65,12 @@ class Solution(object):
         :type root: TreeNode
         :rtype: List[int]
         """
-        self.ino(root)
+        self.inorder(root)
         return self.result
 
-    def ino(self, root):
+    def inorder(self, root):
         if not root:
             return
-        self.ino(root.left)
+        self.inorder(root.left)
         self.result.append(root.val)
-        self.ino(root.right)
+        self.inorder(root.right)
