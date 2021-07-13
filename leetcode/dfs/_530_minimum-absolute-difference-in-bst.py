@@ -5,7 +5,7 @@
 File name    : _530_minimum-absolute-difference-in-bst.py
 Author       : miaoyc
 Create date  : 2021/7/7 12:15 上午
-Description  : 二茬搜索树的最小绝对差
+Description  : 二叉搜索树的最小绝对差
 """
 
 """

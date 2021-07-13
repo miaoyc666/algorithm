@@ -44,6 +44,9 @@ Description  : 二叉搜索树的范围和
 
 class Solution(object):
 
+    def __init__(self):
+        self.sum = 0
+
     def rangeSumBST(self, root, low, high):
         """
         :type root: TreeNode
@@ -51,3 +54,13 @@ class Solution(object):
         :type high: int
         :rtype: int
         """
+        self.inorder(root, low, high)
+        return self.sum
+
+    def inorder(self, root, low, high):
+        if not root:
+            return
+        self.inorder(root.left, low, high)
+        if low <= root.val <= high:
+            self.sum += root.val
+        self.inorder(root.right, low, high)
