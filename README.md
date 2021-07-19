@@ -1,7 +1,7 @@
 # 刷题记录
 
 【当前进度】  
-leetcode：45  
+leetcode：46  
 hihocoder：4  
   
 【说明】  
