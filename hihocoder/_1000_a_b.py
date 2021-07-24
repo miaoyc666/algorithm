@@ -33,7 +33,7 @@ def main():
     while True:
         try:
             (a, b) = (int(x) for x in raw_input().split())
-            print a + b
+            print(a + b)
         except EOFError:
             break
 

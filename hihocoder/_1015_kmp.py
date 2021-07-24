@@ -57,7 +57,7 @@ def main():
             for i in xrange(group_count):
                 res.append(kmp_match(str(raw_input()), str(raw_input())))
             for i in res:
-                print i
+                print(i)
 
         except EOFError:
             break

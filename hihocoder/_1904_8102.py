@@ -39,11 +39,11 @@ def main():
     :return:
     """
     count = 0
-    (start, end) = (int(x) for x in raw_input().split())
-    for num in xrange(start, end+1):
+    (start, end) = (int(x) for x in input().split())
+    for num in range(start, end+1):
         if reverse_num(num) - num >= 1000:
             count += 1
-    print count
+    print(count)
 
 
 if __name__ == "__main__":
