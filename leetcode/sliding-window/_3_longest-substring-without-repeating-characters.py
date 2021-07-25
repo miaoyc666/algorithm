@@ -69,20 +69,20 @@ class Solution:
 
         时间复杂度：O(n)
         """
-        a = set()
-        b = []
-        max_len = 0
-        for i in s:
-            if i in a:
-                a.add(i)
-                b.append(i)
-                while b and b[0] in a:
-                    print(b)
-                    a.remove(b.pop(0))
-            a.add(i)
-            b.append(i)
-            if len(b) >= max_len:
-                max_len = len(b)
+        if not s:
+            return 0
+        seen = set()
+        cur_len, max_len, left = 0, 0, 0
+        for i in range(len(s)):
+            cur_len += 1
+            # while循环为了找到第一个s[i]的位置，把s[i]之前的都移除
+            while s[i] in seen:
+                seen.remove(s[left])
+                left += 1
+                cur_len -= 1
+            if cur_len > max_len:
+                max_len = cur_len
+            seen.add(s[i])
         return max_len
 
 
