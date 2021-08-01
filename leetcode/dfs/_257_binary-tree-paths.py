@@ -91,4 +91,4 @@ if __name__ == "__main__":
     root.left = pl
     root.right = pr
 
-    print Solution().binaryTreePaths(root)
+    print(Solution().binaryTreePaths(root))
