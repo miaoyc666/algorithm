@@ -8,6 +8,8 @@ Create date  : 2021/7/28 10:49 下午
 Description  : 杨辉三角
 """
 
+from typing import List
+
 """
 给定一个非负整数numRows，生成「杨辉三角」的前numRows行。
 
@@ -29,9 +31,6 @@ Description  : 杨辉三角
 
 """
 
-from typing import List
-
-
 class Solution:
     def generate(self, numRows: int) -> List[List[int]]:
         ret = []
@@ -50,4 +49,3 @@ class Solution:
 
 if __name__ == "__main__":
     print(Solution().generate(5))
-

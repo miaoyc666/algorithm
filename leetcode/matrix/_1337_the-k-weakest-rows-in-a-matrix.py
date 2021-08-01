@@ -8,6 +8,8 @@ Create date  : 2021/8/1 11:38 下午
 Description  : 
 """
 
+from typing import List
+
 """
 给你一个大小为m* n的矩阵mat，矩阵由若干军人和平民组成，分别用 1 和 0 表示。
 请你返回矩阵中战斗力最弱的k行的索引，按从最弱到最强排序。
@@ -57,3 +59,27 @@ n == mat[i].length
 1 <= k <= m
 matrix[i][j] 不是 0 就是 1
 """
+
+
+class Solution:
+
+    def __init__(self):
+        self.value_map = {}
+
+    def kWeakestRows(self, mat: List[List[int]], k: int) -> List[int]:
+        for i in range(len(mat)):
+            self.value_map[i] = self.calc_value(mat[i])
+
+        # 此段代码需要考虑不用sorted如何实现，抽空去看一下sorted代码
+        value_order = sorted(self.value_map.items(), key=lambda x:x[1], reverse=False)
+        return [i for i, j in value_order[:k]]
+
+    def calc_value(self, list_):
+        value = 0
+        for i in list_:
+            if i == 1:
+                value += 1
+            else:
+                break
+        return value
+
