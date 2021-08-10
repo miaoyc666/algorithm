@@ -47,3 +47,25 @@ for (int i = 0; i < len; i++) {
 -104 <= nums[i] <= 104
 nums 已按升序排列
 """
+
+from typing import List
+
+
+class Solution:
+    def removeDuplicates(self, nums: List[int]) -> int:
+        if not nums:
+            return 0
+        tmp = nums[-1]
+        count = 0
+        for i in range(len(nums)-1, -1, -1):
+            if nums[i] == tmp and count == 0:
+                count += 1
+                continue
+            if nums[i] == tmp and count != 0:
+                del nums[i]
+                continue
+            if nums[i] != tmp and count != 0:
+                count = 1
+                tmp = nums[i]
+                continue
+        return len(nums)
