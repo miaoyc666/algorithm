@@ -24,3 +24,15 @@ Description  : 阶乘后的零
 说明: 你算法的时间复杂度应为 O(log n) 。
 """
 
+
+class Solution:
+    def trailingZeroes(self, n: int) -> int:
+        # 统计因数5的个数
+        count = 0
+        for i in range(1, n+1):
+            if i % 5 == 0:
+                num = i
+                while num % 5 == 0 and num >= 5:
+                    count += 1
+                    num /= 5
+        return count
