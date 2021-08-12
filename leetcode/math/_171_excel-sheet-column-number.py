@@ -48,6 +48,8 @@ columnTitle 在范围 ["A", "FXSHRXW"] 内
 
 
 class Solution:
+
+    # 26进制转换解法，或者利用ascii码解法
     def titleToNumber(self, columnTitle: str) -> int:
         sums = 0
         for i in columnTitle:
