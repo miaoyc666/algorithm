@@ -34,3 +34,33 @@ Description  : 加一
 0 <= digits[i] <= 9
 """
 
+from typing import List
+
+
+class Solution:
+    def plusOne(self, digits: List[int]) -> List[int]:
+        if len(digits) == 1:
+            if digits[0] == 9:
+                return [1, 0]
+            else:
+                digits[0] += 1
+                return digits
+
+        for i in range(len(digits)-1, -1, -1):
+            if i == 0:
+                if digits[i] == 10:
+                    digits[i] = 0
+                    digits = [1] + digits
+                break
+            if i == len(digits)-1:
+                if digits[i] + 1 == 10:
+                    digits[i] = 0
+                    digits[i-1] += 1
+                else:
+                    digits[i] += 1
+                continue
+
+            if digits[i] + 1 > 10:
+                digits[i] = 0
+                digits[i-1] += 1
+        return digits
