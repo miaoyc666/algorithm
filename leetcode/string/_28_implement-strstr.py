@@ -35,23 +35,24 @@ Description  : 实现 strStr()
 haystack 和 needle 仅由小写英文字符组成
 """
 
-#
-# class Solution:
-#     def strStr(self, haystack: str, needle: str) -> int:
-#         if haystack == needle:
-#             return 0
-#         m, n = len(haystack), len(needle)
-#         if n == 0:
-#             return 0
-#         if n > m:
-#             return -1
-#         index = 0
-#         for i in range(0, m):
-#             flag = True
-#             for j in range(0, n):
-#                 if i+j < m and haystack[i+j] != needle[j]:
-#                     flag = False
-#                     break
-#             if flag:
-#                 return i
-#         return -1
+
+class Solution:
+    def strStr(self, haystack: str, needle: str) -> int:
+        m, n = len(haystack), len(needle)
+        if haystack == needle or not n:
+            return 0
+        if n > m:
+            return -1
+        print(m-n+1)
+        for i in range(0, m-n+1):
+            flag = True
+            for j in range(0, n):
+                if i+j >= m:
+                    flag = False
+                    break
+                if i+j < m and haystack[i+j] != needle[j]:
+                    flag = False
+                    break
+            if flag:
+                return i
+        return -1
