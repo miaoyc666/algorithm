@@ -43,16 +43,18 @@ class Solution:
             return 0
         if n > m:
             return -1
-        print(m-n+1)
-        for i in range(0, m-n+1):
-            flag = True
-            for j in range(0, n):
-                if i+j >= m:
-                    flag = False
-                    break
-                if i+j < m and haystack[i+j] != needle[j]:
-                    flag = False
-                    break
+        total = int((m-n+1))
+        for i in range(0, total):
+            flag = self.match(haystack[i: i+n], needle)
             if flag:
                 return i
         return -1
+
+    def match(self, a, b):
+        len_ = len(b)
+        for i in range(0, len_):
+            if a[i] == b[i] and a[len_-1-i] == b[len_-1-i]:
+                continue
+            else:
+                return False
+        return True
