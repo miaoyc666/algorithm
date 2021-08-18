@@ -5,7 +5,7 @@
 File name    : _278_first-bad-version.py
 Author       : miaoyc
 Create date  : 2021/7/19 11:25 下午
-Description  : 
+Description  : 第一个错误的版本
 """
 
 """
@@ -55,7 +55,6 @@ class Solution(object):
         """
         low = 1
         high = n
-        mid = (low + high) / 2
         while low <= high:
             mid = (low + high) / 2
             if not isBadVersion(mid):
