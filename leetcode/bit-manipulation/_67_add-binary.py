@@ -29,5 +29,13 @@ Description  : 二进制求和
 """
 
 
-
-
+class Solution:
+    def addBinary(self, a: str, b: str) -> str:
+        a = int(a, 2)
+        b = int(b, 2)
+        while b:
+            result = a ^ b
+            carry = (a & b) << 1
+            # a & b << 1 表示进位
+            a, b = result, carry
+        return bin(a)[2:]
