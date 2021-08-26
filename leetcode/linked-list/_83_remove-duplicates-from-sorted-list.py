@@ -25,3 +25,26 @@ Description  : 删除排序链表中的重复元素
 -100 <= Node.val <= 100
 题目数据保证链表已经按升序排列
 """
+
+
+# Definition for singly-linked list.
+class ListNode:
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
+
+
+class Solution:
+
+    def deleteDuplicates(self, head: ListNode) -> ListNode:
+        # 解题关键点，给定链表是排好序的，所以可以通过相连节点的val是否相等来判断
+
+        if not head:
+            return head
+        node = head
+        while node.next:
+            if node.val == node.next.val:
+                node.next = node.next.next
+            else:
+                node = node.next
+        return head
