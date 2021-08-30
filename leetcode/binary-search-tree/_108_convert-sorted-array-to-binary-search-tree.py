@@ -27,3 +27,29 @@ Description  : 将有序数组转换为二叉搜索树
 -104 <= nums[i] <= 104
 nums 按 严格递增 顺序排列
 """
+
+from typing import List
+
+# Definition for a binary tree node.
+
+
+class TreeNode:
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
+
+
+class Solution:
+
+    def sortedArrayToBST(self, nums: List[int]) -> TreeNode:
+        def get_min(left, right):
+            # 总是选择中间位置左边的数字作为根节点
+            if left > right:
+                return None
+            mid = (left+right) // 2
+            root = TreeNode(nums[mid])
+            root.left = get_min(left, mid-1)
+            root.right = get_min(mid+1, right)
+            return root
+        return get_min(0, len(nums)-1)
