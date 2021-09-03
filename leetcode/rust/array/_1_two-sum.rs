@@ -1,8 +1,9 @@
-// File name    : _1_two-sum.rs
-// Author       : miaoyc
-// Create date  : 2021/9/1 10:49 下午
-// Description  : 两数之和
-
+/*
+File name    : _1_two-sum.rs
+Author       : miaoyc
+Create date  : 2021/9/1 10:49 下午
+Description  : 两数之和
+*/
 
 /*
 给定一个整数数组 nums和一个目标值 target，请你在该数组中找出和为目标值的那两个整数，并返回他们的数组下标。
