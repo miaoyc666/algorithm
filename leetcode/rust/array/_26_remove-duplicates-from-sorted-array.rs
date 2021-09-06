@@ -1,14 +1,11 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-
-"""
-File name    : _26_remove-duplicates-from-sorted-array.py
+/*
+File name    : _26_remove-duplicates-from-sorted-array.rs
 Author       : miaoyc
-Create date  : 2021/8/10 11:45 下午
+Create date  : 2021/9/6 11:31 下午
 Description  : 删除有序数组中的重复项
-"""
+*/
 
-"""
+/*
 给你一个有序数组 nums ，请你 原地 删除重复出现的元素，使每个元素 只出现一次 ，返回删除后数组的新长度。
 不要使用额外的数组空间，你必须在 原地 修改输入数组 并在使用 O(1) 额外空间的条件下完成。
 
@@ -40,26 +37,4 @@ for (int i = 0; i < len; i++) {
 0 <= nums.length <= 3 * 104
 -104 <= nums[i] <= 104
 nums 已按升序排列
-"""
-
-from typing import List
-
-
-class Solution:
-    def removeDuplicates(self, nums: List[int]) -> int:
-        if not nums:
-            return 0
-        tmp = nums[-1]
-        count = 0
-        for i in range(len(nums)-1, -1, -1):
-            if nums[i] == tmp and count == 0:
-                count += 1
-                continue
-            if nums[i] == tmp and count != 0:
-                del nums[i]
-                continue
-            if nums[i] != tmp and count != 0:
-                count = 1
-                tmp = nums[i]
-                continue
-        return len(nums)
+*/
