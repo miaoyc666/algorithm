@@ -38,3 +38,31 @@ for (int i = 0; i < len; i++) {
 -104 <= nums[i] <= 104
 nums 已按升序排列
 */
+
+/*
+解题思路
+双指针，快慢指针的解法
+排序后的数据nums, 放置两个指针i和j，其中i是慢指针，j是快指针。遍历数组做一下判断
+1.当nums[i]=num[j]时，递增j以跳过重复项；
+2.当nums[i]!=num[j]时，把nums[j]的值复制到nums[i+1], 然后i+1；
+重复以上过程，知道j到达数组末位为止。
+*/
+
+impl Solution {
+    pub fn remove_duplicates(nums: &mut Vec<i32>) -> i32 {
+        if nums.len() == 0 {
+            return 0
+        }
+        let mut i = 0;
+        for j in 0..nums.len() {
+            if nums[i] != nums[j] {
+                // 此处为判断是否所有数据都不重复，不重复的情况下就没有必要进行一次赋值
+                if i + 1 < j {
+                    nums[i+1] = nums[j];
+                }
+                i += 1;
+            }
+        }
+        return (i + 1) as i32;
+    }
+}
