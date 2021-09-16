@@ -35,7 +35,8 @@ minStack.getMin();   --> 返回 -2.
 */
 
 struct MinStack {
-
+    stack: Vec<i32>,
+    min_stack: Vec<i32>
 }
 
 
@@ -47,7 +48,10 @@ impl MinStack {
 
     /** initialize your data structure here. */
     fn new() -> Self {
-
+        MinStack {
+            stack: Vec::new(),
+            min_stack: Vec::new()
+        }
     }
 
     fn push(&self, val: i32) {
