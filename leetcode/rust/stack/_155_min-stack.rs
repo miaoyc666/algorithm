@@ -39,6 +39,16 @@ struct MinStack {
     min_stack: Vec<i32>
 }
 
+/*
+1.算法原理
+使用两个栈，一个数据栈stack用于存放正常入栈和出栈的数据，另一个辅助站min_stack用于存取stack中的最小值。
+min_stack等价于遍历stack中所有的元，把升序的数据全部删除掉，留下一个从栈底到栈顶降序的栈。
+
+2.算法流程
+push方法：判断push的数据是否小于等于min_stack的栈顶元素，如果是，则min_stack也push该数值;
+pop方法：判断pop的数据是否等于min_stack栈顶元素，如果是则让min_stack也同步pop栈顶元素;
+get_min方法：返回min_stack的栈顶元素。
+*/
 
 /**
  * `&self` means the method takes an immutable reference.
