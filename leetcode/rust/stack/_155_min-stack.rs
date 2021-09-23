@@ -64,20 +64,28 @@ impl MinStack {
         }
     }
 
-    fn push(&self, val: i32) {
-
+    fn push(&mut self, val: i32) {
+        self.stack.push(val);
+        if self.min_stack.is_empty() || val <= *self.min_stack.last().unwrap() {
+            self.min_stack.push(val);
+        }
     }
 
-    fn pop(&self) {
-
+    fn pop(&mut self) {
+        if self.stack.is_empty() {
+            return;
+        }
+        if self.stack.pop().unwrap() == *self.min_stack.last().unwrap() {
+            self.min_stack.pop();
+        }
     }
 
     fn top(&self) -> i32 {
-
+        return *self.stack.last().unwrap();
     }
 
     fn get_min(&self) -> i32 {
-
+        return *self.min_stack.last().unwrap();
     }
 }
 
