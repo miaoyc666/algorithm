@@ -57,4 +57,4 @@ class Solution(object):
 
 
 if __name__ == "__main__":
-    print Solution().sortedSquares([-7, -3, 2, 3, 11])
+    print(Solution().sortedSquares([-7, -3, 2, 3, 11]))
