@@ -44,6 +44,15 @@ Description  :
 1 <= k <= nums.length
 */
 
+/*
+算法原理：使用双端队列实现一个单调递减队列，元素从队尾压入，从队尾或者队首弹出，直接取队首元素即可得到最大值。
+
+实现步骤：
+1、
+
+*/
+
+
 impl Solution {
     pub fn max_sliding_window(nums: Vec<i32>, k: i32) -> Vec<i32> {
 
