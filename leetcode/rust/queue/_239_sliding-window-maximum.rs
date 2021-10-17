@@ -60,9 +60,39 @@ Description  :
 - max函数：返回队列中的最大值，即队首元素
 */
 
+use std::collections::VecDeque;
 
 impl Solution {
     pub fn max_sliding_window(nums: Vec<i32>, k: i32) -> Vec<i32> {
+        // 数组为空或者k为1，直接返回空数组
+        if nums.len() == 0 || k == 1 {
+            return nums;
+        }
 
+        let mut res: Vec<i32> = Vec::new();
+        let mut deque: VecDeque<i32> = VecDeque::new();
+        for i in 0..nums.len() {
+            // 弹出队列中所有小于当前值的元素，然后再将当前值从队尾压入
+            push(&mut deque, nums[i]);
+            if (i as i32) > k - 1 {
+                // 弹出队首元素，让滑动窗口内保持k个数字
+                pop(&mut deque, nums[i - k as usize]);
+                // 将最大值加入输出数组
+                res.push(max(&deque);
+            } else if (i as i32) == k - 1 {
+                // 将前k个元素的最大值加入输出数组
+                res.push(max(&deque));
+            }
+        }
+        return res;
     }
+}
+
+fn push() {
+}
+
+fn pop() {
+}
+
+fn max() {
 }
