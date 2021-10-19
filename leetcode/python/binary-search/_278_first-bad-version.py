@@ -40,7 +40,10 @@ Description  : 第一个错误的版本
 # The isBadVersion API is already defined for you.
 # @param version, an integer
 # @return a bool
-# def isBadVersion(version):
+
+
+def isBadVersion(version):
+    pass
 
 
 class Solution(object):
