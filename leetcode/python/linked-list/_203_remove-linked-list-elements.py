@@ -23,3 +23,17 @@ Description  :
 输入：head = [7,7,7,7], val = 7
 输出：[]
 """
+
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+class Solution:
+    def removeElements(self, head: ListNode, val: int) -> ListNode:
+
+        v = head
+        while v.next:
+            if v.val == val:
+                v.next = v.next.next
+            v = v.next
