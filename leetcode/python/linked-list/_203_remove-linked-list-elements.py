@@ -25,15 +25,33 @@ Description  :
 """
 
 # Definition for singly-linked list.
-# class ListNode:
-#     def __init__(self, val=0, next=None):
-#         self.val = val
-#         self.next = next
-class Solution:
-    def removeElements(self, head: ListNode, val: int) -> ListNode:
 
-        v = head
-        while v.next:
-            if v.val == val:
-                v.next = v.next.next
-            v = v.next
+
+class ListNode:
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
+
+
+class Solution:
+
+    def removeElements(self, head: ListNode, val: int) -> ListNode:
+        """
+        解题思路：
+        链表的定义具有递归的性质，因此链表题目常可以用递归的方法求解。
+        这道题要求删除链表中所有节点值等于特定值的节点，可以用递归实现。
+
+        对于给定的链表，首先对除了头节点head以外的节点进行删除操作，然后判断head的节点值是否等于给定的val。
+        如果head的节点值等于val，则head需要被删除，因此删除操作后的头节点为head.next；
+        如果head的节点值不等于val，则head保留，因此删除操作后的头节点还是head。上述过程是一个递归的过程。
+
+        递归的终止条件是head为空，此时直接返回head。
+        当head不为空时，递归地进行删除操作，然后判断head的节点值是否等于val并决定是否要删除head。
+        """
+        if not head:
+            return
+        head.next = self.removeElements(head.next, val)
+        if head.val == val:
+            return head.next
+        else:
+            return head
