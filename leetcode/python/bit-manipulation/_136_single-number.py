@@ -21,3 +21,22 @@ Description  : 只出现一次的数字
 输入: [4,1,2,1,2]
 输出: 4
 """
+
+from typing import List
+
+
+class Solution:
+
+    def singleNumber(self, nums: List[int]) -> int:
+        '''
+        算法思路：
+        1、交换律：a ^ b ^ c <=> a ^ c ^ b
+        2、任何数于0异或为任何数 0 ^ n => n
+        3、相同的数异或为0: n ^ n => 0
+        解决方案：
+        将list内数据全部异或即可得到单独的数
+        '''
+        single_num = 0
+        for i in nums:
+            single_num ^= i
+        return single_num
