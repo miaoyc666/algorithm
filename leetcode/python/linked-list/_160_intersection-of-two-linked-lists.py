@@ -47,3 +47,17 @@ listB 中节点数目为 n
 如果 listA 和 listB 没有交点，intersectVal 为 0
 如果 listA 和 listB 有交点，intersectVal == listA[skipA + 1] == listB[skipB + 1]
 """
+
+# Definition for singly-linked list.
+
+
+class ListNode:
+    def __init__(self, x):
+        self.val = x
+        self.next = None
+
+
+class Solution:
+
+    def getIntersectionNode(self, headA: ListNode, headB: ListNode) -> ListNode:
+        pass
