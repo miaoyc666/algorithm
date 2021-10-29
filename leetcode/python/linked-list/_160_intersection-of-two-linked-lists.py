@@ -50,7 +50,6 @@ listB 中节点数目为 n
 
 # Definition for singly-linked list.
 
-
 class ListNode:
     def __init__(self, x):
         self.val = x
@@ -60,4 +59,15 @@ class ListNode:
 class Solution:
 
     def getIntersectionNode(self, headA: ListNode, headB: ListNode) -> ListNode:
-        pass
+        a, b = headA, headB
+        while a and b:
+            if a == b:
+                return a
+            a = a.next
+            b = b.next
+            if not a and not b:
+                return None
+            if not a:
+                a = headB
+            if not b:
+                b = headA
