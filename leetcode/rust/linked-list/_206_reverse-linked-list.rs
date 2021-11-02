@@ -45,6 +45,13 @@ Description  : 反转链表
 // }
 impl Solution {
     pub fn reverse_list(head: Option<Box<ListNode>>) -> Option<Box<ListNode>> {
+        /*
+            解题思路：
+            定义两个节点，prev代表前一个节点，curr代表当前的节点。初始将prev节点设置为空， curr节点设置为头结点head。
+            遍历链表，将curr节点的next指针改为指向prev节点，再分别将prev和curr节点向后移动一个节点。
+            遍历完成后，curr节点为空，prev节点就是新的头结点。
+        */
+
 
     }
 }
