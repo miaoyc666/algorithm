@@ -43,6 +43,7 @@ Description  : 反转链表
 //     }
 //   }
 // }
+
 impl Solution {
     pub fn reverse_list(head: Option<Box<ListNode>>) -> Option<Box<ListNode>> {
         /*
@@ -51,7 +52,18 @@ impl Solution {
             遍历链表，将curr节点的next指针改为指向prev节点，再分别将prev和curr节点向后移动一个节点。
             遍历完成后，curr节点为空，prev节点就是新的头结点。
         */
-
-
+       let mut prev = None;
+       let mut curr = head;
+       // 使用while let简化模式匹配处理
+       while let Some(mut curr_node) = curr.take() {
+           // 保存当前节点的下一个节点
+           let next_temp = curr_node.next.take();   // 使用Option的take方法取值
+           // 将当前节点指向prev
+           curr_node.next = prev.take();
+           // prev和curr分别往后移动一个节点，即把当前节点curr_node赋值给prev，把之前保存的当前节点的下一个节点next_temp赋值给curr
+           prev = Some(curr_node);
+           curr = next_temp;
+       }
+       return prev;
     }
 }
