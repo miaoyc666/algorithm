@@ -19,10 +19,14 @@ class TreeNode:
 class Solution:
 
     def action(self, root):
-        pass
+        # 对节点的处理，此处打印仅为举例
+        print(root.val)
 
-    def pre(self, root):
-        self.pre(self, root.left)
+    def inorder(self, root):
+        # 退出条件，此处root节点不存在仅为举例
+        if not root:
+            return
+        self.inorder(self, root.left)
         self.action()
-        self.pre(self, root.right)
+        self.inorder(self, root.right)
 

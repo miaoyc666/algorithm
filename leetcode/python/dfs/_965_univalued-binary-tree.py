@@ -35,11 +35,24 @@ class TreeNode:
 
 
 class Solution:
+
+    def __init__(self):
+        self.value = None
+
     def isUnivalTree(self, root: TreeNode) -> bool:
+        self.value = root.val
+        return self.inorder(root)
 
-        pass
+    def action(self, root):
+        return True if root.val == self.value else False
 
-
-    def pre(self, root):
-        pass
-        self.pre(self, root.left)
+    def inorder(self, root):
+        if not root:
+            return True
+        if not self.inorder(root.left):
+            return False
+        if not self.action(root):
+            return False
+        if not self.inorder(root.right):
+            return False
+        return True
