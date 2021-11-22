@@ -25,7 +25,7 @@ impl Solution {
         for i in 0..nums.len() {
             let complement = target - nums[i];
             if map.contains_key(&complement) {
-                return Vec![i as i32, map[&complement] as i32];
+                return vec![i as i32, map[&complement] as i32];
             }
             map.insert(nums[i], i);
         }
