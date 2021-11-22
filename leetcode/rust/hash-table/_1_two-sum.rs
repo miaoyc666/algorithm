@@ -19,7 +19,21 @@ Description  : 两数之和
 use std::collections::HashMap;
 
 impl Solution {
+    
     pub fn two_sum(nums: Vec<i32>, target: i32) -> Vec<i32> {
+        let mut map: HashMap<i32, usize> = HashMap::new();
+        for i in 0..nums.len() {
+            let complement = target - nums[i];
+            if map.contains_key(&complement) {
+                return Vec![i as i32, map[&complement] as i32];
+            }
+            map.insert(nums[i], i);
+        }
+        return vec![];
+    }
+
+
+    pub fn two_sum_old(nums: Vec<i32>, target: i32) -> Vec<i32> {
         let mut res = vec![];
         let mut cache = HashMap::new();
 
@@ -41,39 +55,4 @@ impl Solution {
     }
 }
 
-
-// impl Solution {
-//     pub fn two_sum(nums: Vec<i32>, target: i32) -> Vec<i32> {
-//         let mut res = Vec::<i32>::new();
-//         for i in 0..nums.len(){
-//             for j in (i+1)..nums.len(){
-//                 if (target == nums[i]+nums[j]){
-//                     res.push(i as i32);
-//                     res.push(j as i32);
-//                 }
-//             }
-//         }
-//         res
-//     }
-// }
-
-// impl Solution {
-//     pub fn two_sum(nums: Vec<i32>, target: i32) -> Vec<i32> {
-//         let mut hMap = HashMap::new();
-//         let mut result = vec![];
-//         let mut dest = 0;
-//         for i in 0..nums.len() {
-//             dest = target - nums[i];
-//             if ()
-//             match hMap.get(dest) => {
-//                 result.push(hMap[dest]);
-//                 result.push(i);
-//             },
-//             None => {
-//                 hMap.insert(dest, 1)
-//             },
-//         }
-//         return result;
-//     }
-// }
 
