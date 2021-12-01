@@ -1,5 +1,10 @@
 package string
 
+import (
+	"strconv"
+	"strings"
+)
+
 /*
 File name    : 165_compare-version-numbers.go
 Author       : miaoyc
@@ -51,3 +56,26 @@ version1 和 version2 都是 有效版本号
 version1 和 version2 的所有修订号都可以存储在 32 位整数 中
 */
 
+// compareVersion此题应该不使用split内置方法，才是训练算法的难度，用了split就是普通题的难度
+func compareVersion(version1 string, version2 string) int {
+	versionA := strings.Split(version1, ".")
+	versionB := strings.Split(version2, ".")
+	for i := len(versionA); i < 4; i++ {
+		versionA = append(versionA, "0")
+	}
+	for i := len(versionB); i < 4; i++ {
+		versionB = append(versionB, "0")
+	}
+	for i := 0; i < 4; i++ {
+		version1, _ := strconv.Atoi(versionA[i])
+		version2, _ := strconv.Atoi(versionB[i])
+		if version1 == version2 {
+			continue
+		} else if version1 > version2 {
+			return 1
+		} else {
+			return -1
+		}
+	}
+	return 0
+}
