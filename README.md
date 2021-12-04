@@ -7,8 +7,9 @@
 - 类型题解题模板单独按类型整理：[解题模板](./doc/template/template.md) 
 
 ###当前进度  
-- leetcode：91                                                                                
-- hihocoder：4    
+- leetcode algorithms: 91                                                                            
+- hihocoder: 4
+- leetcode database: 1
 
 ###刷题圣经  
 二叉树篇：  
