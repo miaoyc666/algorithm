@@ -1,4 +1,4 @@
-package linked_list
+package linkedList
 
 /*
 File name    : 206_reverse-linked-list.go
@@ -28,19 +28,6 @@ Description  : 反转链表
 
 进阶：链表可以选用迭代或递归方式完成反转。你能否用两种方法解决这道题？
  */
-
-/**
-* Definition for singly-linked list.
-* type ListNode struct {
-*     Val int
-*     Next *ListNode
-* }
-*/
-
-type ListNode struct {
-	Val int
-	Next *ListNode
-}
 
 func reverseList(head *ListNode) *ListNode {
 	var prev *ListNode
