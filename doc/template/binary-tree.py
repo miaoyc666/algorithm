@@ -8,6 +8,11 @@ Create date  : 2021/11/11 12:36 上午
 Description  : 二叉树问题处理模板，本质上就是一个二叉树的中序遍历
 """
 
+"""
+此模板为递归处理模板
+二叉树遍历问题，首先要找到递归处理的退出条件，其次找到遍历顺序和对节点的处理
+"""
+
 
 class TreeNode:
     def __init__(self, val=0, left=None, right=None):
