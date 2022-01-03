@@ -2,13 +2,15 @@
 # -*- coding: utf-8 -*-
 
 """
-File name    : jz-offer-30-bao-han-minhan-shu-de-zhan-lcof.py
+File name    : jz-offer-30-bao-han-minhan-shu-de-zhan.py
 Author       : miaoyc
 Create date  : 2022/1/2 11:05 下午
 Description  : 最小栈
 """
 
 """
+难度：简单
+
 与155 min-stack雷同
 """
 

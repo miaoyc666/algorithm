@@ -8,7 +8,7 @@
 - 类型题解题模板单独按类型整理：[解题模板](./doc/template/template.md) 
 
 ###当前进度  
-- leetcode algorithms: 98
+- leetcode algorithms: 99
 - hihocoder: 4
 - leetcode database: 1
 
@@ -34,6 +34,7 @@
 2. Py2中，/表示地板除，即舍弃小数部分下取整。在Py3中，/表示除法，//表示地板除；21.8.24  
 3. isalnum()，用于检测字符串是否由字母和数字组成，这个内置函数堪称黑科技；21.9.30  
 4. collections.Counter()可以选择字符串作为传参来生成一个针对每个字符的计数器；21.11.14 
+5. Py3初始化指定长度为n的数组a=[0] * n；22.1.3
 
 ##### Rust
 1. 使用vec!宏创建有初始值的动态树组；21.11.22

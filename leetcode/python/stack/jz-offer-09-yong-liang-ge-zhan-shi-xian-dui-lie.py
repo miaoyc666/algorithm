@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 """
-File name    : jz-offer-09-yong-liang-ge-zhan-shi-xian-dui-lie-lcof.py
+File name    : jz-offer-09-yong-liang-ge-zhan-shi-xian-dui-lie.py
 Author       : miaoyc
 Create date  : 2022/1/1 11:13 下午
 Description  : 用两个栈实现队列
