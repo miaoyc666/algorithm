@@ -11,7 +11,7 @@ Description  : 最小栈
 """
 难度：简单
 
-与155 min-stack雷同
+与155 min-stack题目重复
 """
 
 
