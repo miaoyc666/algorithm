@@ -29,3 +29,34 @@ Description  : 用两个栈实现队列
 1 <= values <= 10000
 最多会对appendTail、deleteHead 进行10000次调用
 """
+
+"""
+解题思路：
+使用两个栈，一个栈stack1用来push数据，另一个栈stack2用于存放stack1出栈后的数据，stack2的数据与stack1的数据为逆序的，以此实现stack2的pop操作相当于与stack1的pop(0)，实现先进先出
+"""
+
+
+class CQueue:
+
+    def __init__(self):
+        self.stack1 = []
+        self.stack2 = []
+
+    def appendTail(self, value: int) -> None:
+        self.stack1.append(value)
+
+    def deleteHead(self) -> int:
+        if self.stack2:
+            return self.stack2.pop()
+        else:
+            if not self.stack1:
+                return -1
+            while self.stack1:
+                self.stack2.append(self.stack1.pop())
+            return self.stack2.pop()
+
+
+# Your CQueue object will be instantiated and called as such:
+# obj = CQueue()
+# obj.appendTail(value)
+# param_2 = obj.deleteHead()
