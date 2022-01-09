@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 """
-File name    : jz-offer2-fu-za-lian-biao-de-fu-zhi.py
+File name    : jz-offer2-35-fu-za-lian-biao-de-fu-zhi.py
 Author       : miaoyc
 Create date  : 2022/1/3 10:35 下午
 Description  : 复杂链表的复制

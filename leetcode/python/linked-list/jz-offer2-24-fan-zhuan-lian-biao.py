@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 """
-File name    : jz-offer2-fan-zhuan-lian-biao.py
+File name    : jz-offer2-24-fan-zhuan-lian-biao.py
 Author       : miaoyc
 Create date  : 2022/1/3 9:42 下午
 Description  : 反转链表
