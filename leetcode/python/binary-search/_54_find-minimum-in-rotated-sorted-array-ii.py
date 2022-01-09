@@ -43,14 +43,8 @@ from typing import List
 运用二分法
 原题是升序数组，那么当中间值小于
 """
+
+
 class Solution:
     def findMin(self, nums: List[int]) -> int:
-
-
-
-
         pass
-
-
-
-

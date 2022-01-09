@@ -43,16 +43,24 @@ random_index：随机指针指向的节点索引（范围从0到n-1）；如果�
 Node.random为空（null）或指向链表中的节点。
 """
 
-"""
 # Definition for a Node.
 class Node:
     def __init__(self, x: int, next: 'Node' = None, random: 'Node' = None):
         self.val = int(x)
         self.next = next
         self.random = random
-"""
 
 
 class Solution:
     def copyRandomList(self, head: 'Optional[Node]') -> 'Optional[Node]':
+        buf = dict()
+        cur = head
+        while cur:
+            buf[cur] = Node(cur.val)
+            cur = cur.next
+        cur = head
+        while cur:
+
+
+
         pass
