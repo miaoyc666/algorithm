@@ -53,6 +53,8 @@ class Node:
 
 class Solution:
     def copyRandomList(self, head: 'Optional[Node]') -> 'Optional[Node]':
+        if not head:
+            return
         buf = dict()
         cur = head
         while cur:
@@ -60,7 +62,7 @@ class Solution:
             cur = cur.next
         cur = head
         while cur:
-
-
-
-        pass
+            buf[cur].next = buf.get(cur.next)
+            buf[cur].random = buf.get(cur.random)
+            cur = cur.next
+        return buf[head]
