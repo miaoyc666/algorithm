@@ -9,6 +9,8 @@ Description  : 搜索二维矩阵 II
 """
 
 """
+难度：中等
+
 编写一个高效的算法来搜索mxn矩阵 matrix 中的一个目标值 target 。该矩阵具有以下特性：
 每行的元素从左到右升序排列。
 每列的元素从上到下升序排列。
@@ -30,3 +32,27 @@ n == matrix[i].length
 每列的所有元素从上到下升序排列
 -109<= target <= 109
 """
+
+"""
+核心解题思路，每比较一次，抛弃一行或一列
+"""
+
+from typing import List
+
+
+class Solution:
+    def findNumberIn2DArray(self, matrix: List[List[int]], target: int) -> bool:
+        m = len(matrix)
+        n = len(matrix[0])
+        # 每比较一次，抛弃一行或一列
+        # 从右上角开始比较
+        i = 0
+        j = n - 1
+        while i < m and j >= 0:
+            if matrix[i][j] == target:
+                return True
+            if matrix[i][j] > target:
+                j -= 1
+            else:
+                i += 1
+        return False
