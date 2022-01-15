@@ -11,8 +11,6 @@ Description  : 从上到下打印二叉树
 """
 难度：中等
 
-与102binary-tree-level-order-traversal 题目重复
- 
 从上到下打印出二叉树的每个节点，同一层的节点按照从左到右的顺序打印。
 
 例如:
@@ -28,3 +26,40 @@ Description  : 从上到下打印二叉树
 提示：
 节点总数 <= 1000
 """
+from typing import List
+
+
+# Definition for a binary tree node.
+class TreeNode:
+    def __init__(self, x):
+        self.val = x
+        self.left = None
+        self.right = None
+
+
+class Solution(object):
+
+    def __init__(self):
+        self.queue_ = []
+        self.result = []
+
+    def levelOrder(self, root: TreeNode) -> List[int]:
+        """
+        :type root: TreeNode
+        :rtype: List[List[int]]
+        """
+        if not root:
+            return []
+        self.queue_ = [root]
+        self.result.append(root.val)
+        while len(self.queue_) > 0:
+            size = len(self.queue_)
+            for i in range(size):
+                head = self.queue_.pop(0)
+                if head.left:
+                    self.queue_.append(head.left)
+                    self.result.append(head.left.val)
+                if head.right:
+                    self.queue_.append(head.right)
+                    self.result.append(head.right.val)
+        return self.result
