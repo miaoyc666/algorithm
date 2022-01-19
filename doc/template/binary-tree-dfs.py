@@ -31,7 +31,6 @@ class Solution:
         # 退出条件，此处root节点不存在仅为举例
         if not root:
             return
-        self.inorder(self, root.left)
-        self.action()
-        self.inorder(self, root.right)
-
+        self.inorder(root.left)
+        self.action(root)
+        self.inorder(root.right)
