@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 """
-File name    : jz-offer2-03-shu-zu-zhong-zhong-fu-de-shu-zi.py
+File name    : jz-offer-3-shu-zu-zhong-zhong-fu-de-shu-zi.py
 Author       : miaoyc
 Create date  : 2022/1/6 10:57 下午
 Description  : 数组中的重复数字

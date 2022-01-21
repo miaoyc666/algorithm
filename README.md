@@ -8,7 +8,7 @@
 - 类型题解题模板单独按类型整理：[解题模板](./doc/template/template.md) 
 
 ###当前进度  
-- leetcode algorithms: 110（重复题目：5）
+- leetcode algorithms: 111（重复题目：6）
 - hihocoder: 4
 - leetcode database: 1
 

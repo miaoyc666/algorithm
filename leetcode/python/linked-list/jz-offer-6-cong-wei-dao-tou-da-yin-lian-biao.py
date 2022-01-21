@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 """
-File name    : jz-offer2-06-cong-wei-dao-tou-da-yin-lian-biao.py
+File name    : jz-offer-6-cong-wei-dao-tou-da-yin-lian-biao.py
 Author       : miaoyc
 Create date  : 2022/1/3 9:35 下午
 Description  : 

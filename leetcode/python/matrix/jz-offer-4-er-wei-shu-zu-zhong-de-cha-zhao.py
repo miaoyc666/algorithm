@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 """
-File name    : jz-offer2-4-er-wei-shu-zu-zhong-de-cha-zhao.py
+File name    : jz-offer-4-er-wei-shu-zu-zhong-de-cha-zhao.py
 Author       : miaoyc
 Create date  : 2022/1/13 12:34 上午
 Description  : 二维数组中的查找

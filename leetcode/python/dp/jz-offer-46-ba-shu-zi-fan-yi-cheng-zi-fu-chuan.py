@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 """
-File name    : jz-offer2-46-ba-shu-zi-fan-yi-cheng-zi-fu-chuan.py
+File name    : jz-offer-46-ba-shu-zi-fan-yi-cheng-zi-fu-chuan.py
 Author       : miaoyc
 Create date  : 2022/1/10 2:36 上午
 Description  : 把数字翻译成字符串

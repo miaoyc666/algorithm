@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 """
-File name    : jz-offer2-05-ti-huan-kong-ge.py
+File name    : jz-offer-5-ti-huan-kong-ge.py
 Author       : miaoyc
 Create date  : 2022/1/4 11:55 下午
 Description  : 替换空格
