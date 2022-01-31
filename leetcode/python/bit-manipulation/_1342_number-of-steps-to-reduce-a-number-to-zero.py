@@ -40,3 +40,12 @@ Description  : 将数字变成0的操作次数
 提示：
 0 <= num <= 10^6
 """
+
+
+class Solution:
+    def numberOfSteps(self, num: int) -> int:
+        count = 0
+        while num > 0:
+            count += 1
+            num = num - 1 if num & 1 == 1 else num // 2
+        return count
