@@ -8,7 +8,7 @@
 - 类型题解题模板单独按类型整理：[解题模板](./doc/template/template.md) 
 
 ###当前进度  
-- leetcode algorithms: 113（重复题目：6）
+- leetcode algorithms: 114（重复题目：6）
 - hihocoder: 4
 - leetcode database: 1
 
@@ -37,6 +37,7 @@
 5. Py3初始化指定长度为n的数组a=[0] * n；22.1.3
 6. nums[:]的作用是深拷贝了数组变量nums；22.1.20
 7. collections.Counter()最常用的用法时传入list得到list中元素计数的dict；22.2.7
+8. collections.Counter()可传入迭代器作为参数；22.2.13
 
 ##### Rust
 1. 使用vec!宏创建有初始值的动态树组；21.11.22
