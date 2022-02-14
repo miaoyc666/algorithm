@@ -28,3 +28,43 @@ Description  : 有序数组中的单一元素
 1 <= nums.length <= 105
 0 <= nums[i]<= 105
 """
+
+"""
+难度：中等
+
+二分法解题思路：
+由于是有序数组，则数字一定是成对出现的，数列会成成对相等的形态排列，唯一的不同数据会破坏成对相等的形态。
+
+if l = 0, r = len(nums), mid = (l + r) // 2
+
+当mid为奇数的时候，如果唯一的异常数据在mid左边，则nums[mid]与nums[mid-1]无法凑成相等的一对数据，反之可以。
+当mid为偶数的时候，如果唯一的异常数据在mid左边，则nums[mid]与nums[mid-1]可以凑成相对的一对，反之不可以。
+
+根据以上四条规则，可以使用二分法进行查找，判断nums[mid]与nums[mid ^ 1]是否相等。
+
+代码技巧（本题解法没用上）：
+当n为奇数时，n与1亦或得到的是n - 1，n ^ 1 = n - 1
+当n为偶数时，n与1亦或得到的是n + 1，n ^ 1 = n + 1
+
+题解：https://leetcode-cn.com/problems/single-element-in-a-sorted-array/solution/miaoyc-you-xu-shu-zu-zhong-de-dan-yi-yua-gvzs/
+"""
+
+
+from typing import List
+
+class Solution:
+    def singleNonDuplicate(self, nums: List[int]) -> int:
+        left, right = 0, len(nums) - 1
+        while left < right:
+            mid = (left + right) // 2
+            if mid % 2 != 0:
+                if nums[mid] == nums[mid - 1]:
+                    left = mid + 1
+                else:
+                    right = mid
+            else:
+                if nums[mid] == nums[mid + 1]:
+                    left = mid + 1
+                else:
+                    right = mid
+        return nums[left]
