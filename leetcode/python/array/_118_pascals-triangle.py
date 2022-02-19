@@ -8,9 +8,9 @@ Create date  : 2021/7/28 10:49 下午
 Description  : 杨辉三角
 """
 
-from typing import List
-
 """
+难度：简单
+
 给定一个非负整数numRows，生成「杨辉三角」的前numRows行。
 
 在「杨辉三角」中，每个数是它左上方和右上方的数的和。
@@ -31,6 +31,9 @@ from typing import List
 
 """
 
+from typing import List
+
+
 class Solution:
     def generate(self, numRows: int) -> List[List[int]]:
         ret = []
@@ -49,3 +52,4 @@ class Solution:
 
 if __name__ == "__main__":
     print(Solution().generate(5))
+
