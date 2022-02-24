@@ -24,3 +24,17 @@ Description  : 左旋转字符串
 限制：
 1 <= k < s.length <= 10000
 """
+
+"""
+不是，这叫啥题啊，写完有点儿怀疑自己，凑个数吧，最水的题目了。
+"""
+
+
+class Solution(object):
+    def reverseLeftWords(self, s, n):
+        """
+        :type s: str
+        :type n: int
+        :rtype: str
+        """
+        return s[n:] + s[:n]
