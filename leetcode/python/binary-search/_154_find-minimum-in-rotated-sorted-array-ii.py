@@ -47,4 +47,17 @@ from typing import List
 
 class Solution:
     def findMin(self, nums: List[int]) -> int:
-        pass
+        """
+        解题思路：
+        此题与旋转无重复数据的排序数组中最小值的唯一区别为存在重复值，解决方法是在二分查找时判断等于的条件，当等于时，不再二分，而已减一。
+        """
+        low, high = 0, len(nums) - 1
+        while low < high:
+            mid = low + (high - low) // 2
+            if nums[mid] < nums[high]:
+                high = mid
+            elif nums[mid] > nums[high]:
+                low = mid + 1
+            else:
+                high -= 1
+        return nums[low]

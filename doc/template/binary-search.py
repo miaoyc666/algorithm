@@ -18,10 +18,9 @@ class Solution:
         :rtype: int
         """
         # 首先找到起始位置
-        low = 0
-        high = len(nums) - 1
+        low, high = 0, len(nums) - 1
         # 再设置退出条件
-        while low <= high:
+        while low < high:
             # 二分条件
             mid = low + (high - low) // 2
             if nums[mid] < target:
