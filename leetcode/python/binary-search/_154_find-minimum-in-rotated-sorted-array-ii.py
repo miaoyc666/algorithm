@@ -5,7 +5,7 @@
 File name    : _154_find-minimum-in-rotated-sorted-array-ii.py
 Author       : miaoyc
 Create date  : 2022/1/7 12:13 上午
-Description  : 寻找旋转数组的最小值
+Description  : 寻找旋转数组的最小值II
 """
 
 """

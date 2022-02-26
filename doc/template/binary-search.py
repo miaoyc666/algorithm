@@ -23,7 +23,7 @@ class Solution:
         # 再设置退出条件
         while low <= high:
             # 二分条件
-            mid = (low + high) // 2
+            mid = low + (high - low) // 2
             if nums[mid] < target:
                 low = mid + 1
             elif nums[mid] > target:
