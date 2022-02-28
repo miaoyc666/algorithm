@@ -110,25 +110,3 @@ class Trie(object):
                 return 0
             cur = cur.nodes[char]
         return cur.count
-
-
-def main():
-    """
-    main
-    :return:
-    """
-    trie_tree = Trie()
-    while True:
-        try:
-            word_count = int(raw_input())
-            for i in xrange(word_count):
-                trie_tree.add(raw_input())
-            word_count = int(raw_input())
-            for i in xrange(word_count):
-                print trie_tree.find(raw_input())
-        except EOFError:
-            break
-
-
-if __name__ == "__main__":
-    main()
