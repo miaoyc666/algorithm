@@ -13,11 +13,13 @@ Description  : 二叉树问题层序遍历模板
 """
 
 # Definition for a binary tree node.
-# class TreeNode(object):
-#     def __init__(self, val=0, left=None, right=None):
-#         self.val = val
-#         self.left = left
-#         self.right = right
+
+
+class TreeNode(object):
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
 
 
 class Solution(object):
@@ -27,7 +29,7 @@ class Solution(object):
 
     def bfs(self, root):
         """
-        :type root: TreeNode
+        :param root: TreeNode
         :rtype: List[TreeNode]
         """
         self.queue_ = [root]
