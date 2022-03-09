@@ -31,3 +31,46 @@ Description  : 路径总和 II
 -1000 <= Node.val <= 1000
 -1000 <= targetSum <= 1000
 """
+
+import copy
+
+
+class TreeNode:
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
+
+
+class Solution(object):
+
+    def __init__(self):
+        self.res = []
+        self.tmp = []
+
+    def pathSum(self, root, targetSum):
+        """
+        path sum
+        :type root: TreeNode
+        :type targetSum: int
+        :rtype: List[List[int]]
+        """
+        self.dfs(root, targetSum)
+        return self.res
+
+    def action(self, root, target):
+        if root.val == target and not root.left and not root.right:
+            a = copy.deepcopy(self.tmp)
+            a.append(root.val)
+            self.res.append(a)
+        self.tmp.append(root.val)
+
+    def dfs(self, root, target):
+        if not root:
+            return
+        self.action(root, target)
+        if root.left:
+            self.dfs(root.left, target - root.val)
+        if root.right:
+            self.dfs(root.right, target - root.val)
+        self.tmp.pop()
