@@ -13,7 +13,7 @@
 - leetcode database: 1
 
 ### 专题训练
-- [求和问题]()
+- [求和问题](./doc/topic/sum.md)
 
 ### 刷题圣经  
 二叉树篇：  
