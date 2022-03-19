@@ -32,7 +32,6 @@ Description  : 二叉树的前序遍历
 示例 5：
 输入：root = [1,null,2]
 输出：[1,2]
-
 """
 
 # Definition for a binary tree node.
@@ -48,12 +47,12 @@ class Solution(object):
     def __init__(self):
         self.result = []
 
-    def pre(self, root):
+    def preorder(self, root):
         if not root:
             return
         self.result.append(root.val)
-        self.pre(root.left)
-        self.pre(root.right)
+        self.preorder(root.left)
+        self.preorder(root.right)
 
     def preorderTraversal(self, root):
         """
