@@ -5,7 +5,7 @@
 File name    : _208_implement-trie-prefix-tree.py
 Author       : miaoyc
 Create date  : 2022/3/17 11:36 PM 
-Description  : 
+Description  : 实现 Trie (前缀树)
 """
 
 """
@@ -41,3 +41,79 @@ word 和 prefix 仅由小写英文字母组成
 insert、search 和 startsWith 调用次数 总计 不超过 3 * 104 次
 """
 
+
+from collections import defaultdict
+
+
+class TrieNode(object):
+    """
+    前缀树节点
+    """
+    def __init__(self):
+        self.nodes = defaultdict(TrieNode)
+        self.count = 1
+        self.is_world = None
+
+
+class Trie(object):
+
+    def __init__(self):
+        self.root = TrieNode()
+
+    def insert(self, word: str) -> None:
+        """
+        新增节点
+        :param word:
+        :return:
+        """
+        cur = self.root
+        for char in word:
+            if char not in cur.nodes:
+                cur.nodes[char].count += 1
+            cur = cur.nodes[char]
+        cur.is_world = True
+
+    def search_prefix(self, word: str) -> TrieNode:
+        """
+        查找前缀
+        :param word:
+        :return:
+        """
+        cur = self.root
+        for char in word:
+            if char not in cur.nodes:
+                return None
+            cur = cur.nodes[char]
+        return cur
+
+    def search(self, word: str) -> bool:
+        """
+        查找节点
+        :param word:
+        :return:
+        """
+        cur = self.search_prefix(word)
+        return True if cur and cur.is_world else False
+
+    def startsWith(self, prefix: str) -> bool:
+        """
+        前缀
+        :param word:
+        :return:
+        """
+        cur = self.search_prefix(prefix)
+
+        return True if cur else False
+
+
+obj = Trie()
+obj.insert("apple")
+param_2 = obj.search("apple")
+param_3 = obj.search("app")
+# param_3 = obj.startsWith(prefix)
+
+# Your Trie object will be instantiated and called as such:
+# obj = Trie()
+# obj.insert(word)
+# param_2 = obj.search(word)
+# param_3 = obj.startsWith(prefix)
