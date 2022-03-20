@@ -45,9 +45,9 @@ class Solution(object):
         self.post(root)
         return self.result
 
-    def post(self, root):
+    def postordr(self, root):
         if not root:
             return
-        self.post(root.left)
-        self.post(root.right)
+        self.postorder(root.left)
+        self.postorder(root.right)
         self.result.append(root.val)
