@@ -8,7 +8,7 @@
 - 类型题解题模板单独按类型整理：[解题模板](./doc/template/template.md) 
 
 ### 当前进度  
-- leetcode algorithms: 140（重复题目：16, sql：2）
+- leetcode algorithms: 143（重复题目：16, sql：2）
 - hihocoder: 4
 - leetcode database: 1
 
@@ -44,6 +44,7 @@
 7. collections.Counter()最常用的用法时传入list得到list中元素计数的dict；22.2.7
 8. collections.Counter()可传入迭代器作为参数；22.2.13
 9. 与技巧3同源，字符串内置函数isalpha()，用于检测字符串是否只由字母组成，技巧3和技巧9可以让开发者免除判断ascii码的烦恼；22.2.23
+10. py3种bin函数用于返回一个整数的二进制字符表示；22.3.28
 
 ##### Rust
 1. 使用vec!宏创建有初始值的动态树组；21.11.22
