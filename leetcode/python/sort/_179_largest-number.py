@@ -34,3 +34,19 @@ Description  : 最大数
 1 <= nums.length <= 100
 0 <= nums[i] <= 109
 """
+
+"""
+解题思路：自定义排序
+"""
+
+from typing import List
+
+
+class Solution:
+    def reorderLogFiles(self, logs: List[str]) -> List[str]:
+        def trans(log: str) -> tuple:
+            a, b = log.split(' ', 1)
+            return (0, b, a) if b[0].isalpha() else (1,)
+
+        logs.sort(key=trans)
+        return logs
