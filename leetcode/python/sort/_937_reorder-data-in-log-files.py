@@ -41,3 +41,19 @@ Description  : 重新排列日志文件
 logs[i] 中，字与字之间都用 单个 空格分隔
 题目数据保证 logs[i] 都有一个标识符，并且在标识符之后至少存在一个字
 """
+
+"""
+解题思路：自定义排序
+"""
+
+from typing import List
+
+
+class Solution:
+    def reorderLogFiles(self, logs: List[str]) -> List[str]:
+        def trans(log: str) -> tuple:
+            a, b = log.split(' ', 1)
+            return (0, b, a) if b[0].isalpha() else (1,)
+
+        logs.sort(key=trans)
+        return logs
