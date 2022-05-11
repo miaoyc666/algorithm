@@ -52,7 +52,20 @@ class Codec:
         :type root: TreeNode
         :rtype: str
         """
-        pass
+        queue_ = [root]
+        s = str(root.val)
+        while len(queue_) > 0:
+            size = len(queue_)
+            for i in range(size):
+                head = queue_.pop(0)
+                if head.left:
+                    queue_.append(head.left)
+                    s += str(head.left.val)
+                if head.right:
+                    queue_.append(head.right)
+                    s += str(head.right.val)
+                s += ","
+        return s
 
     def deserialize(self, data):
         """
@@ -60,7 +73,7 @@ class Codec:
         :type data: str
         :rtype: TreeNode
         """
-        pass
+        tree = data.split(",")
 
 
 # Your Codec object will be instantiated and called as such:
