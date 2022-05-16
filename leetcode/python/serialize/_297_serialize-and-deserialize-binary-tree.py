@@ -36,7 +36,7 @@ Description  : 二叉树的序列化与反序列化
 -1000 <= Node.val <= 1000
 """
 
-from collections import deque
+# from collections import deque
 
 
 # Definition for a binary tree node.
@@ -47,54 +47,54 @@ class TreeNode(object):
         self.right = right
 
 
-class Codec:
-
-    def serialize(self, root):
-        """
-        Encodes a tree to a single string.
-        :type root: TreeNode
-        :rtype: str
-        """
-        queue = deque([root])
-        s = ""
-        while len(queue) > 0:
-            size = len(queue)
-            for i in range(size):
-                head = queue.popleft()
-                if head:
-                    s += str(head.val)
-                    queue.append(head.left)
-                    queue.append(head.right)
-                else:
-                    s += "N"
-                s += " "
-        return s
-
-    def deserialize(self, data):
-        """
-        Decodes your encoded data to tree.
-        :type data: str
-        :rtype: TreeNode
-        """
-        vals = data.split()
-        if not vals:
-            return None
-        if vals[0] == 'N':
-            return None
-        root = TreeNode(vals[0])
-        queue = deque([root])
-        index = 1
-        while queue:
-            cur = queue.popleft()
-            if vals[index] != "N":
-                cur.left = TreeNode(vals[index])
-                queue.append(cur.left)
-            index += 1
-            if vals[index] != "N":
-                cur.right = TreeNode(vals[index])
-                queue.append(cur.right)
-            index += 1
-        return root
+# class Codec:
+#
+#     def serialize(self, root):
+#         """
+#         Encodes a tree to a single string.
+#         :type root: TreeNode
+#         :rtype: str
+#         """
+#         queue = deque([root])
+#         s = ""
+#         while len(queue) > 0:
+#             size = len(queue)
+#             for i in range(size):
+#                 head = queue.popleft()
+#                 if head:
+#                     s += str(head.val)
+#                     queue.append(head.left)
+#                     queue.append(head.right)
+#                 else:
+#                     s += "N"
+#                 s += " "
+#         return s
+#
+#     def deserialize(self, data):
+#         """
+#         Decodes your encoded data to tree.
+#         :type data: str
+#         :rtype: TreeNode
+#         """
+#         vals = data.split()
+#         if not vals:
+#             return None
+#         if vals[0] == 'N':
+#             return None
+#         root = TreeNode(vals[0])
+#         queue = deque([root])
+#         index = 1
+#         while queue:
+#             cur = queue.popleft()
+#             if vals[index] != "N":
+#                 cur.left = TreeNode(vals[index])
+#                 queue.append(cur.left)
+#             index += 1
+#             if vals[index] != "N":
+#                 cur.right = TreeNode(vals[index])
+#                 queue.append(cur.right)
+#             index += 1
+#         return root
 
 
 # Your Codec object will be instantiated and called as such:
