@@ -47,6 +47,44 @@ class TreeNode(object):
         self.right = right
 
 
+"""
+解题思路：
+1.二叉搜索树的特点为左孩子节点比父节点小，右孩子节点比父节点大，可以利用该特性进行反序列化；
+2.序列化时使用后续遍历，可以保证root节点在序列化列表的末尾；
+3.反序列化时，每次递归遍历序列化数据中的一条数据。
+"""
+
+import cmath
+
+
+class Codec:
+
+    def serialize(self, root: TreeNode) -> str:
+        arr = []
+
+        def postOrder(root: TreeNode) -> None:
+            if root is None:
+                return
+            postOrder(root.left)
+            postOrder(root.right)
+            arr.append(root.val)
+        postOrder(root)
+        return ' '.join(map(str, arr))
+
+    def deserialize(self, data: str) -> TreeNode:
+        arr = list(map(int, data.split()))
+
+        def construct(lower: int, upper: int) -> TreeNode:
+            if arr == [] or arr[-1] < lower or arr[-1] > upper:
+                return None
+            val = arr.pop()
+            root = TreeNode(val)
+            root.right = construct(val, upper)
+            root.left = construct(lower, val)
+            return root
+        return construct(-cmath.inf, cmath.inf)
+
+
 # class Codec:
 #
 #     def serialize(self, root):
