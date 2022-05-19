@@ -1,4 +1,4 @@
-# File name    :  175_combine-two-tables.sql
+# File name    : 175_combine-two-tables.sql
 # Author       : miaoyc
 # Create date  : 2021/12/4 10:46 下午
 # Description  : 组合两个表

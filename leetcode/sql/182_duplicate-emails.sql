@@ -1,4 +1,4 @@
-# File name    :  175_combine-two-tables.sql
+# File name    : 182_duplicate-emails.sql
 # Author       : miaoyc
 # Create date  : 2022/3/15 11:46 下午
 # Description  : 查找重复的电子邮箱
