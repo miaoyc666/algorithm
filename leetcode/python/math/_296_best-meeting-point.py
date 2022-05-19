@@ -30,7 +30,7 @@ Description  : 最佳的碰头地点
 m == grid.length
 n == grid[i].length
 1 <= m, n <= 200
-grid[i][j] ==0or1.
+grid[i][j] ==0 or 1.
 grid中 至少 有两个朋友
 """
 

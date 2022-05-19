@@ -29,6 +29,16 @@ Description  : 序列化和反序列化二叉搜索树
 题目数据 保证 输入的树是一棵二叉搜索树。
 """
 
+"""
+解题思路：
+1.二叉搜索树的特点为左孩子节点比父节点小，右孩子节点比父节点大，可以利用该特性进行反序列化；
+2.序列化时使用后续遍历，可以保证root节点在序列化列表的末尾；
+3.反序列化时，每次递归遍历序列化数据中的一条数据。
+"""
+
+import cmath
+
+
 # Definition for a binary tree node.
 class TreeNode:
     def __init__(self, x):
@@ -36,60 +46,35 @@ class TreeNode:
         self.left = None
         self.right = None
 
-from collections import deque
-
 
 class Codec:
 
-    def serialize(self, root):
-        """
-        Encodes a tree to a single string.
-        :type root: TreeNode
-        :rtype: str
-        """
-        queue = deque([root])
-        s = ""
-        while len(queue) > 0:
-            size = len(queue)
-            for i in range(size):
-                head = queue.popleft()
-                if head:
-                    s += str(head.val)
-                    queue.append(head.left)
-                    queue.append(head.right)
-                else:
-                    s += "N"
-                s += " "
-        return s
+    def serialize(self, root: TreeNode) -> str:
+        arr = []
 
-    def deserialize(self, data):
-        """
-        Decodes your encoded data to tree.
-        :type data: str
-        :rtype: TreeNode
-        """
-        vals = data.split()
-        if not vals:
-            return None
-        if vals[0] == 'N':
-            return None
-        root = TreeNode(vals[0])
-        queue = deque([root])
-        index = 1
-        while queue:
-            cur = queue.popleft()
-            if vals[index] != "N":
-                cur.left = TreeNode(vals[index])
-                queue.append(cur.left)
-            index += 1
-            if vals[index] != "N":
-                cur.right = TreeNode(vals[index])
-                queue.append(cur.right)
-            index += 1
-        return root
+        def postOrder(root: TreeNode) -> None:
+            if root is None:
+                return
+            postOrder(root.left)
+            postOrder(root.right)
+            arr.append(root.val)
+        postOrder(root)
+        return ' '.join(map(str, arr))
+
+    def deserialize(self, data: str) -> TreeNode:
+        arr = list(map(int, data.split()))
+
+        def construct(lower: int, upper: int) -> TreeNode:
+            if arr == [] or arr[-1] < lower or arr[-1] > upper:
+                return None
+            val = arr.pop()
+            root = TreeNode(val)
+            root.right = construct(val, upper)
+            root.left = construct(lower, val)
+            return root
+        return construct(-cmath.inf, cmath.inf)
 
 
-# Your Codec object will be instantiated and called as such:
 # Your Codec object will be instantiated and called as such:
 # ser = Codec()
 # deser = Codec()
