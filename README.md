@@ -13,6 +13,10 @@
 
 ### 专题训练
 - [求和问题](./doc/topic/sum.md)
+- [序列化问题]
+
+### Just for fun
+- [愚蠢的题目](./doc/topic/stupid.md)
 
 ### 刷题圣经  
 二叉树篇：  
