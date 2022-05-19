@@ -10,7 +10,6 @@
 ### 当前进度  
 - leetcode algorithms: 158（重复题目：16, sql：4）
 - hihocoder: 4
-- leetcode database: 1
 
 ### 专题训练
 - [求和问题](./doc/topic/sum.md)
