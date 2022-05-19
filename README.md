@@ -13,7 +13,8 @@
 
 ### 专题训练
 - [求和问题](./doc/topic/sum.md)
-- [序列化问题]
+- [序列化问题](./doc/topic/serialize.md)
+- [中位数问题](./doc/topic/median.md)
 
 ### Just for fun
 - [愚蠢的题目](./doc/topic/stupid.md)
