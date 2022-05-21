@@ -11,10 +11,9 @@ Description  : 寻找右区间
 """
 难度：中等
 
-给你一个区间数组 intervals ，其中intervals[i] = [starti, endi] ，且每个starti 都 不同 。
-区间 i 的 右侧区间 可以记作区间 j ，并满足 startj>= endi ，且 startj 最小化 。
-返回一个由每个区间 i 的 右侧区间 在intervals 中对应下标组成的数组。如果某个区间 i 不存在对应的 右侧区间 ，则下标 i 处的值设为 -1 。
-
+给你一个区间数组 intervals，其中intervals[i] = [starti, endi]，且每个starti都不同。
+区间i的右侧区间可以记作区间 j ，并满足startj >= endi ，且startj最小化。
+返回一个由每个区间 i 的右侧区间在intervals中对应下标组成的数组。如果某个区间i不存在对应的右侧区间，则下标i处的值设为-1。
 
 示例 1：
 输入：intervals = [[1,2]]
@@ -41,3 +40,42 @@ intervals[i].length == 2
 每个间隔的起点都 不相同
 """
 
+import bisect
+from typing import List
+
+
+class Solution:
+    def findRightInterval(self, intervals: List[List[int]]) -> List[int]:
+        """
+        解题思路：
+        1.用数组存二维数组第一列，用map存二维数组第一列以及对应的下标
+        2.将数组排序，并且取出来数组最后一个max数
+        3.拿每一个区间的right数去和max比较，如果大于max，说明右区间不存在，直接-1。否则存在，那么就去数组中用二分法查找那个符合要求的数字，找到之后，再去map中取下标。
+
+        代码技巧：
+        python的bisect包为内置的二分查找包
+        bisect.bisect()返回查找元素下标的right
+        bisect.bisect_left()返回查找元素下标的left
+        bisect.bisect_right()返回查找元素下标的right
+        """
+
+        # 1.
+        l, d = [], {}
+        for i, interval in enumerate(intervals):
+            l.append(interval[0])
+            d[interval[0]] = i
+        print(l, d)
+
+        # 2.
+        l = sorted(l)
+        max_v = l[-1]
+
+        # 3.
+        res = []
+        for _, right in intervals:
+            if right > max_v:
+                res.append(-1)
+                continue
+            index = bisect.bisect_left(l, right)
+            res.append(d[l[index]])
+        return res
