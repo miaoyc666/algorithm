@@ -52,6 +52,7 @@
 11. collections.deque的popleft()的效率要比普通list的pop(0)效率高非常多；22.5.15
 12. cmath包的inf变量表示无穷大，-cmath.inf表示负无穷大；22.5.17
 13. bisect包内置了二分查找算法，bisect.bisect()返回查找元素下标的right，bisect_left()返回查找元素下标的left，bisect_right()返回查找元素下标的right；22.5.21
+14. ord()用于返回单个字符的ascii值，chr()函数用于返回输入整数(0~255)的ascii符号；22.5.25
 
 ##### Rust
 1. 使用vec!宏创建有初始值的动态树组；21.11.22
