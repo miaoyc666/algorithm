@@ -8,13 +8,14 @@
 - 类型题解题模板单独按类型整理：[解题模板](./doc/template/template.md) 
 
 ### 当前进度  
-- leetcode algorithms: 165（重复题目：16, sql：4）
+- leetcode algorithms: 167（重复题目：16, sql：4）
 - hihocoder: 4
 
 ### 专题训练
 - [求和问题](./doc/topic/sum.md)
 - [序列化问题](./doc/topic/serialize.md)
 - [中位数问题](./doc/topic/median.md)
+- [最短单词距离](./doc/topic/shortest-word-distance.md)
 
 ### Just for fun
 - [愚蠢的题目](./doc/topic/stupid.md)
