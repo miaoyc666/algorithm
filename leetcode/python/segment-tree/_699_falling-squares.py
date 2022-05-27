@@ -42,6 +42,11 @@ tag: segment-tree
 1 <= sideLengthi <= 106
 """
 
+"""
+解题思路：
+1.看不懂，先抄个题解： https://leetcode.cn/problems/falling-squares/solution/-by-lcbin-5rop/
+"""
+
 from typing import List
 
 
@@ -119,4 +124,3 @@ class SegmentTree:
             node.left.add = node.add
             node.right.add = node.add
             node.add = 0
-
