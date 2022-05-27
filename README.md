@@ -41,18 +41,21 @@
 ##### Python
 1. `list*2`相当于list.extend(list); 21.7.14
 2. Py2中，/表示地板除，即舍弃小数部分下取整。在Py3中，/表示除法，//表示地板除；21.8.24 
-3. 字符串内置函数isalnum()，用于检测字符串是否由字母和数字组成，这个内置函数堪称黑科技；21.9.30  
-4. collections.Counter()可以选择字符串作为传参来生成一个针对每个字符的计数器；21.11.14 
-5. Py3初始化指定长度为n的数组a=[0] * n；22.1.3
-6. nums[:]的作用是深拷贝了数组变量nums；22.1.20
-7. collections.Counter()最常用的用法时传入list得到list中元素计数的dict；22.2.7
-8. collections.Counter()可传入迭代器作为参数；22.2.13
-9. 与技巧3同源，字符串内置函数isalpha()，用于检测字符串是否只由字母组成，技巧3和技巧9可以让开发者免除判断ascii码的烦恼；22.2.23
-10. py3种bin函数用于返回一个整数的二进制字符表示；22.3.28
-11. collections.deque的popleft()的效率要比普通list的pop(0)效率高非常多；22.5.15
-12. cmath包的inf变量表示无穷大，-cmath.inf表示负无穷大；22.5.17
-13. bisect包内置了二分查找算法，bisect.bisect()返回查找元素下标的right，bisect_left()返回查找元素下标的left，bisect_right()返回查找元素下标的right；22.5.21
-14. ord()用于返回单个字符的ascii值，chr()函数用于返回输入整数(0~255)的ascii符号；22.5.25
+3. collections.Counter()可以选择字符串作为传参来生成一个针对每个字符的计数器；21.11.14 
+4. Py3初始化指定长度为n的数组a=[0] * n；22.1.3
+5. nums[:]的作用是深拷贝了数组变量nums；22.1.20
+6. collections.Counter()最常用的用法时传入list得到list中元素计数的dict；22.2.7
+7. collections.Counter()可传入迭代器作为参数；22.2.13
+8. py3种bin函数用于返回一个整数的二进制字符表示；22.3.28
+9. collections.deque的popleft()的效率要比普通list的pop(0)效率高非常多；22.5.15
+10. cmath包的inf变量表示无穷大，-cmath.inf表示负无穷大；22.5.17
+
+##### python黑科技
+1. 字符串内置函数isalnum()，用于检测字符串是否由字母和数字组成，这个内置函数堪称黑科技；21.9.30  
+2. 与技巧1同源，字符串内置函数isalpha()，用于检测字符串是否只由字母组成，技巧3和技巧9可以让开发者免除判断ascii码的烦恼；22.2.23
+3. bisect包内置了二分查找算法，bisect.bisect()返回查找元素下标的right，bisect_left()返回查找元素下标的left，bisect_right()返回查找元素下标的right；22.5.21
+4. itertools.pairwise()返回列表中两两相邻的成对数据；22.5.25
+5. ord()用于返回单个字符的ascii值，chr()函数用于返回输入整数(0~255)的ascii符号；22.5.25
 
 ##### Rust
 1. 使用vec!宏创建有初始值的动态树组；21.11.22
