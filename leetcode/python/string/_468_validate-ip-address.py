@@ -38,3 +38,32 @@ xi是一个 十六进制字符串 ，可以包含数字、小写英文字母( 'a
 queryIP 仅由英文字母，数字，字符 '.' 和 ':' 组成。
 """
 
+
+class Solution:
+    def validIPAddress(self, queryIP: str) -> str:
+        if "." in queryIP:
+            s_list = queryIP.split(".")
+            if len(s_list) != 4:
+                return "Neither"
+            if s_list[0].isdigit() and int(s_list[0]) == 0:
+                return "Neither"
+            for i, v in enumerate(s_list):
+                if not v.isdigit():
+                    return "Neither"
+                if i == 0 and int(v) == 0:
+                    return "Neither"
+                if len(v) != 1 and v[0] == "0":
+                    return "Neither"
+                if int(v) < 0 or int(v) > 255:
+                    return "Neither"
+            return "IPv4"
+        else:
+            s_list = queryIP.split(":")
+            if len(s_list) != 8:
+                return "Neither"
+            for v in s_list:
+                if len(v) <= 0 or len(v) > 4:
+                    return "Neither"
+                if not all(ch in '0123456789abcdefABCDEF' for ch in v):
+                    return "Neither"
+            return "IPv6"
