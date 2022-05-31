@@ -10,6 +10,7 @@ Description  : 掉落的方块
 
 """
 难度：困难
+tag: segment-tree
 
 在二维平面上的 x 轴上，放置着一些方块。
 给你一个二维整数数组 positions ，其中 positions[i] = [lefti, sideLengthi] 表示：第 i 个方块边长为 sideLengthi ，其左侧边与 x 轴上坐标点lefti 对齐。
