@@ -33,11 +33,14 @@ n == nums.length
 
 from typing import List
 
+"""
+解题思路：
+n-1个数同时+1，相当于每次有1个数自身-1，因为只能做减法，所以数组最后的数只能是最小值。因此，每个元素减去最小值求其和就是答案。
+"""
+
 
 class Solution:
     def minMoves(self, nums: List[int]) -> int:
-        # 解题思路
-        # n-1个数同时+1，相当于每次有1个数自身-1，因为只能做减法，所以数组最后的数只能是最小值。因此，每个元素减去最小值求其和就是答案。
         s, m = 0, min(nums)
         for i in nums:
             s += abs(i - m)
