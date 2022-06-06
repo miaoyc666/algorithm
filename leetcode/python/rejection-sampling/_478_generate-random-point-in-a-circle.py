@@ -36,6 +36,13 @@ solution.randPoint ();//返回[0.36572,0.17248]
 randPoint 最多被调用3 * 104次
 """
 
+
+"""
+解题思路：
+如何确定生成的点在圆内？
+"""
+
+
 import random
 from typing import List
 
