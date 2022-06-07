@@ -50,7 +50,7 @@
 8. py3种bin函数用于返回一个整数的二进制字符表示；22.3.28
 9. collections.deque的popleft()的效率要比普通list的pop(0)效率高非常多；22.5.15
 10. cmath包的inf变量表示无穷大，-cmath.inf表示负无穷大；22.5.17
-11. random.uniform(a, b)生成a和b之间的随机浮点数；
+11. random.uniform(a, b)生成a和b之间的随机浮点数；22.6.6
 
 ##### python黑科技
 1. 字符串内置函数isalnum()，用于检测字符串是否由字母和数字组成，这个内置函数堪称黑科技。isdigit()检测是否只有数字组成。；21.9.30  
