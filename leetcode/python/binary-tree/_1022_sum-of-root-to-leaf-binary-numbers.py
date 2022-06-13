@@ -31,6 +31,8 @@ Node.val仅为 0 或 1
 """
 
 # Definition for a binary tree node.
+
+
 class TreeNode:
     def __init__(self, val=0, left=None, right=None):
         self.val = val
@@ -39,7 +41,7 @@ class TreeNode:
 
 
 class Solution:
-    def sumRootToLeaf(self, root: Optional[TreeNode]) -> int:
+    def sumRootToLeaf(self, root: TreeNode) -> int:
         def preorder(root, path):
             if root:
                 path += str(root.val)
