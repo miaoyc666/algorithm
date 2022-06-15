@@ -9,6 +9,8 @@ Description  : 两数相加
 """
 
 """
+难度：中等
+
 给你两个非空 的链表，表示两个非负的整数。它们每位数字都是按照逆序的方式存储的，并且每个节点只能存储一位数字。
 请你将两个数相加，并以相同形式返回一个表示和的链表。
 你可以假设除了数字 0 之外，这两个数都不会以 0开头。
@@ -32,6 +34,11 @@ Description  : 两数相加
 题目数据保证列表表示的数字不含前导零
 """
 
+"""
+解题思路：
+方案一：转换成整数相加，再转换会链表。
+方案二：链表相加，相加过程中考虑进位，考虑节点为空。需要注意node.next的赋值问题，不要给空节点赋值。
+"""
 
 # Definition for singly-linked list.
 class ListNode:
@@ -40,7 +47,7 @@ class ListNode:
         self.next = next
 
 
-class Solution:
+class Solution1:
 
     def addTwoNumbers(self, l1: ListNode, l2: ListNode) -> ListNode:
         sum_ = self.convert2num(l1) + self.convert2num(l2)
@@ -67,3 +74,36 @@ class Solution:
             j = tmp.pop()
             num = num * 10 + j
         return num
+
+
+class Solution2:
+    def addTwoNumbers(self, l1: Optional[ListNode], l2: Optional[ListNode]) -> Optional[ListNode]:
+        head = tail = ListNode()
+        t = 0       # 进位变量
+        while l1 or l2 or t:
+            # x = l1.val if l1 else 0
+            # y = l2.val if l2 else 0
+            # s = t + x + y
+            # t = s // 10
+            # tail.next = ListNode(s % 10)
+            # tail = tail.next
+            # l1 = l1.next if l1 else None
+            # l2 = l2.next if l2 else None
+            if l1:
+                x = l1.val
+                l1 = l1.next
+            else:
+                x = 0
+
+            if l2:
+                y = l2.val
+                l2 = l2.next
+            else:
+                y = 0
+
+            s = t + x + y
+            t = s // 10
+            tail.next = ListNode(s % 10)
+            tail = tail.next
+
+        return head.next
