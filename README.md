@@ -11,10 +11,6 @@
 - leetcode algorithms: 184（重复题目：16, sql：4）
 - hihocoder: 4
 
-### pass list
-- 732, 875, 497, 730, 498
-- 719
-
 ### 专题训练
 - [求和问题](./doc/topic/sum.md)
 - [序列化问题](./doc/topic/serialize.md)
