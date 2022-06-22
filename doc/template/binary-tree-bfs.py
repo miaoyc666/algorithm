@@ -24,21 +24,17 @@ class TreeNode(object):
 
 class Solution(object):
 
-    def __init__(self):
-        self.queue_ = []
-
     def bfs(self, root):
         """
         :param root: TreeNode
         :rtype: List[TreeNode]
         """
-        self.queue_ = [root]
-        while len(self.queue_) > 0:
-            size = len(self.queue_)
+        queue_ = [root]
+        while len(queue_) > 0:
+            size = len(queue_)
             for i in range(size):
-                head = self.queue_.pop(0)
+                head = queue_.pop(0)
                 if head.left:
-                    self.queue_.append(head.left)
+                    queue_.append(head.left)
                 if head.right:
-                    self.queue_.append(head.right)
-        return self.queue_
+                    queue_.append(head.right)
