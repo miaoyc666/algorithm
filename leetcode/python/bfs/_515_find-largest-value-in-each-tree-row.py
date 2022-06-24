@@ -26,6 +26,7 @@ Description  : 在每个树行中找最大值
 -231<= Node.val <= 231- 1
 """
 
+from math import inf
 from typing import List
 
 
@@ -39,14 +40,20 @@ class TreeNode:
 
 class Solution:
     def largestValues(self, root: TreeNode) -> List[int]:
+        if not root:
+            return []
         q, res = [root], []
         while len(q) > 0:
             size = len(q)
-            m =
+            m = -inf
             for i in range(size):
                 head = q.pop(0)
+                if not head:
+                    continue
+                m = max(m, head.val)
                 if head.left:
                     q.append(head.left)
                 if head.right:
                     q.append(head.right)
-                
+            res.append(m)
+        return res
