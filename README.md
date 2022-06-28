@@ -8,7 +8,7 @@
 - 类型题解题模板单独按类型整理：[解题模板](./doc/template/template.md) 
 
 ### 当前进度  
-- leetcode algorithms: 188（重复题目：16, sql：4）
+- leetcode algorithms: 189（重复题目：16, sql：4）
 - hihocoder: 4
 
 ### 专题训练
