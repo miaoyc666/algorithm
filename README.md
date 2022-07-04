@@ -8,7 +8,7 @@
 - 类型题解题模板单独按类型整理：[解题模板](./doc/template/template.md) 
 
 ### 当前进度  
-- leetcode algorithms: 189（重复题目：16, sql：4）
+- leetcode algorithms: 190（重复题目：16, sql：4）
 - hihocoder: 4
 
 ### 专题训练
@@ -51,6 +51,7 @@
 9. collections.deque的popleft()的效率要比普通list的pop(0)效率高非常多；22.5.15
 10. cmath包的inf变量表示无穷大，-cmath.inf表示负无穷大；22.5.17
 11. random.uniform(a, b)生成a和b之间的随机浮点数；22.6.6
+12. nums.sort()为原地排序，直接改变nums的内容，sorted(nums)为生成新的对象作为排序后的结果，不是原地排序；22.7.4
 
 ##### python黑科技
 1. 字符串内置函数isalnum()，用于检测字符串是否由字母和数字组成，这个内置函数堪称黑科技。isdigit()检测是否只有数字组成。；21.9.30  
