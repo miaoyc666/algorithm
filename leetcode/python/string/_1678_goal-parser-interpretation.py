@@ -40,10 +40,15 @@ command 由 "G"、"()" 和/或 "(al)" 按某种顺序组成
 
 class Solution:
     def interpret(self, command: str) -> str:
-        res = []
-        for i, c in enumerate(command):
-            if c == 'G':
-                res.append(c)
-            elif c == '(':
-                res.append('o' if command[i + 1] == ')' else 'al')
-        return ''.join(res)
+        r = ""
+        for i, v in enumerate(command):
+            if v == "G":
+                r += v
+            elif v == "(":
+                if command[i+1] == ")":
+                    r += "o"
+                else:
+                    r += "al"
+            else:
+                continue
+        return r
