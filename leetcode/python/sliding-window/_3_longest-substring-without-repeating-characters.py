@@ -49,6 +49,30 @@ s由英文字母、数字、符号和空格组成
 时间复杂度：O(n)O(n)
 """
 
+# 用python实现一个函数，获取字符串内不含有重复字符的最长子串的长度。
+# 例如：输入字符串“abcabcbb”，输出结果为3，因为“abc”是最长的不含重复字符的子串。
+# 要求：时间复杂度为O(n)
+
+
+def get_longest_substring_length(s):
+    """
+    这个是github copilot写的，我也不知道为什么这么写，但是确实是对的
+    :param s:
+    :return:
+    """
+    if not s:
+        return 0
+    seen = set()
+    cur_len, max_len = 0, 0
+    for i in range(len(s)):
+        cur_len += 1
+        while s[i] in seen:
+            seen.remove(s[i - cur_len])
+            cur_len -= 1
+        seen.add(s[i])
+        max_len = max(max_len, cur_len)
+    return max_len
+
 
 class Solution:
 
