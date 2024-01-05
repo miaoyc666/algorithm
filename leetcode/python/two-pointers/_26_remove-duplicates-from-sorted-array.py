@@ -45,21 +45,39 @@ nums 已按升序排列
 from typing import List
 
 
+# class Solution:
+#     def removeDuplicates(self, nums: List[int]) -> int:
+#         if not nums:
+#             return 0
+#         tmp = nums[-1]
+#         count = 0
+#         for i in range(len(nums)-1, -1, -1):
+#             if nums[i] == tmp and count == 0:
+#                 count += 1
+#                 continue
+#             if nums[i] == tmp and count != 0:
+#                 del nums[i]
+#                 continue
+#             if nums[i] != tmp and count != 0:
+#                 count = 1
+#                 tmp = nums[i]
+#                 continue
+#         return len(nums)
+
+
 class Solution:
     def removeDuplicates(self, nums: List[int]) -> int:
+        """
+        双指针，快慢指针解法，快指针去寻找不一样的数据，慢指针用于定位
+        """
         if not nums:
             return 0
-        tmp = nums[-1]
-        count = 0
-        for i in range(len(nums)-1, -1, -1):
-            if nums[i] == tmp and count == 0:
-                count += 1
-                continue
-            if nums[i] == tmp and count != 0:
-                del nums[i]
-                continue
-            if nums[i] != tmp and count != 0:
-                count = 1
-                tmp = nums[i]
-                continue
-        return len(nums)
+        slow = 1
+        fast = 1
+        n = len(nums)
+        while fast < n:
+            if nums[fast] != nums[fast-1]:
+                nums[slow] = nums[fast]
+                slow += 1
+            fast += 1
+        return slow
