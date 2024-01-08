@@ -4,7 +4,8 @@
 """
 File name    : _169_majority-element.py
 Author       : miaoyc
-Create date  : 2021/9/27 11:45 下午
+Create date  : 2021/9/27 23:45
+Create date  : 2024/1/8 12:21
 Description  : 多数元素
 """
 
@@ -24,17 +25,24 @@ Description  : 多数元素
 尝试设计时间复杂度为 O(n)、空间复杂度为 O(1) 的算法解决此问题。
 """
 
+import collections
 from typing import List
+
+
+# class Solution:
+#     def majorityElement(self, nums: List[int]) -> int:
+#         dic = {}
+#         for i in nums:
+#             if i not in dic:
+#                 dic[i] = 0
+#             dic[i] += 1
+#         for k, v in dic.items():
+#             if v >= len(nums)/2:
+#                 return k
+#         return -1
 
 
 class Solution:
     def majorityElement(self, nums: List[int]) -> int:
-        dic = {}
-        for i in nums:
-            if i not in dic:
-                dic[i] = 0
-            dic[i] += 1
-        for k, v in dic.items():
-            if v >= len(nums)/2:
-                return k
-        return -1
+        counts = collections.Counter(nums)
+        return max(counts.keys(), key=counts.get)
