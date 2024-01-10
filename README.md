@@ -16,7 +16,7 @@
 - [序列化问题](./doc/topic/serialize.md)
 - [中位数问题](./doc/topic/median.md)
 - [最短单词距离](./doc/topic/shortest-word-distance.md)
-- [股票问题]
+- [股票问题](./doc/topic/stock.md)
 
 ### Just for fun
 - [愚蠢的题目](./doc/topic/stupid.md)
