@@ -4,7 +4,8 @@
 """
 File name    : _121_best-time-to-buy-and-sell-stock.py
 Author       : miaoyc
-Create date  : 2020/7/22 11:06 上午
+Create time  : 2020/7/22 11:06
+Update time  : 2024/1/10 10:44
 Description  : 买卖股票的最佳时机
 """
 
@@ -23,19 +24,27 @@ Description  : 买卖股票的最佳时机
 输入: [7,6,4,3,1]
 输出: 0
 解释: 在这种情况下, 没有交易完成, 所以最大利润为 0。
+
+提示：
+1 <= prices.length <= 105
+0 <= prices[i] <= 104
 """
 
+from typing import List
 
-class Solution(object):
-    def maxProfit(self, prices):
-        """
-        :type prices: List[int]
-        :rtype: int
-        """
+class Solution:
+    def maxProfit(self, prices: List[int]) -> int:
         if not prices:
             return 0
-        min_v, max_v = prices[0], 0
-        for i in range(len(prices)):
-            min_v = min(min_v, prices[i])
-            max_v = max(max_v, prices[i] - min_v)
+        # 1. 记录【今天之前买入的最小市值和最大盈利】
+        min_v = prices[0]
+        max_v = 0
+        # 跳过第一天，从第二天开始迭代计算
+        for i in range(1, len(prices)):
+            # 2.计算【今天之前最小值买入，今天卖出的获利】，也即【今天卖出的最大获利】
+            tmp_max_v = prices[i] - min_v
+            # 更新最小市值
+            min_v = min(prices[i], min_v)
+            # 3.比较【每天的最大获利】，取最大值即可，完成循环
+            max_v = max(max_v, tmp_max_v)
         return max_v
